@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .logo {
+    margin-bottom: 20px;
+  }
+  
+  .shield {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: #000;
+    mask: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/Simple_shield.svg') no-repeat center;
+    -webkit-mask: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/Simple_shield.svg') no-repeat center;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+    color: #000;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: box-shadow 0.3s;
+  }
+  
+  input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .login-button:hover {
+    background-color: #333;
+    transform: scale(1.02);
+  }
+  
+  .login-button:active {
+    transform: scale(0.98);
+  }
+  
+  .register-link {
+    margin-top: 10px;
+    font-size: 0.9em;
+  }
+  
+  .register-link a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .register-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Welcome Overlay */
+  .welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  
+  .welcome-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .welcome-content {
+    text-align: center;
+    color: #fff;
+    animation: zoomIn 0.8s ease-out, fadeInText 1s ease-in;
+  }
+  
+  .welcome-content .shield.large {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
